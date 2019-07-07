@@ -18,7 +18,7 @@ LFUSE=0xef
 # ISP=usbasp   PORT=/dev/usb/ttyUSB0
 # ISP=stk500v2 PORT=/dev/ttyUSB0
 ISP=usbasp
-PORT=/dev/usb/ttyUSB0
+PORT="usb:001:011"
 
 help:
 	@echo "Usage: make                same as make help"
@@ -79,6 +79,9 @@ cpp:
 
 flash:
 	avrdude -c ${ISP} -p ${TARGET} -P ${PORT} -U flash:w:main.hex
+
+flashmetaboard:
+	avrdude -c ${ISP} -p atmega168 -P ${PORT} -U flash:w:main.hex
 
 fuses:
 	avrdude -c ${ISP} -p ${TARGET} -P ${PORT} -u -U hfuse:w:$(HFUSE):m -U lfuse:w:$(LFUSE):m

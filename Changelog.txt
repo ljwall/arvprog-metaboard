@@ -1,0 +1,10 @@
+This file documents changes in avrprog based on metaboard.
+New entries are always appended to the end of the file. Scroll down to the
+bottom to see the most recent changes.
+
+* Release 1.0 2008-04-06
+
+- AVR-Doper now supports this hardware -- reflect this fact in Readme.txt
+- Added changelog entry in USBasp directory, this was missing in first release.
+
+* Release 1.1 2008-04-27
